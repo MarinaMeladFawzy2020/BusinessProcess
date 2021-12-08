@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { ProcessroleService } from 'src/app/services/processrole.service';
 import { TestService } from 'src/app/services/test.service';
+import { AddprocessroleComponent } from '../addprocessrole/addprocessrole.component';
 import { ProcessroledetailsComponent } from '../processroledetails/processroledetails.component';
 
 @Component({
@@ -11,7 +12,8 @@ import { ProcessroledetailsComponent } from '../processroledetails/processrolede
 export class ProcessroletreeComponent implements OnInit {
   [x:string]:any;
   @ViewChild('myDetails') myDetails!: ProcessroledetailsComponent;
- 
+  @ViewChild('myParentID') myParentID!: AddprocessroleComponent;
+  
  //breadcrumb
   items = [
     {label: 'Process Roles' , routerLink: '/processrole'}
@@ -86,6 +88,8 @@ export class ProcessroletreeComponent implements OnInit {
 
       setTimeout(()=>{
         this.myDetails.sendRowTree(this.ROLEROW);
+        this.myParentID.sendRowTree(this.ROLEROW);
+        
       },10)
       
 

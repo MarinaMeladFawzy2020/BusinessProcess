@@ -26,7 +26,7 @@ export class ProcessroledetailsComponent implements OnInit {
    this.processRole.getMembers(this.ROLE_ID).subscribe(Members => {
     this.Members = Members;
     this.loading = false;
-    console.log(this.Members);
+    // console.log(this.Members);
     this.Members.forEach(
       (Member: { date: string | number | Date; }) => {
         return (Member.date = new Date(Member.date));

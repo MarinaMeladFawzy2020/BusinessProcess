@@ -27,7 +27,7 @@
 <br>
 <!--Table Member-->
 <p-table #dt1 [value]="Members" dataKey="id" [rows]="5" [showCurrentPageReport]="true"  sortMode="multiple"
-	[rowsPerPageOptions]="[5,10,25,50]" [loading]="loading" styleClass="p-datatable-Members p-datatable-gridlines"
+	[rowsPerPageOptions]="[5,10,25,50]" [loading]="loading" styleClass="p-datatable-sm  p-datatable-striped p-datatable-Members p-datatable-gridlines"
 	[paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
 	[globalFilterFields]="['MEMBER_TYPE','MEMBER_NAME']">
 	
@@ -45,14 +45,17 @@
 		<tr>
 			<th pSortableColumn="MEMBER_TYPE">
 				<div class="p-d-flex p-jc-between p-ai-center">
-                    MemberName
+                    MemberType
                     <p-sortIcon field="MEMBER_TYPE"></p-sortIcon>
 					<p-columnFilter type="text" field="MEMBER_TYPE" display="menu"></p-columnFilter>
+
+			
+
 				</div>
 			</th>
             <th pSortableColumn="MEMBER_NAME">
 				<div class="p-d-flex p-jc-between p-ai-center">
-					MemberType                
+					MemberName              
                      <p-sortIcon field="MEMBER_NAME"></p-sortIcon>
 					<p-columnFilter type="text" field="MEMBER_NAME" display="menu"></p-columnFilter>
 				</div>

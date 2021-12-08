@@ -2,7 +2,7 @@
 
 .p-datatable.p-datatable-gridlines .p-datatable-thead > tr > th {
     border-width: 1px 1px 1px 1px;
-    width: 8rem !important;
+    width: 1rem !important;
 }
 
 .p-button {
@@ -65,4 +65,8 @@ font-weight: 600px !important;
 
 .p-inputtext:enabled:hover {
     border-color: #ced4da !important;
+}
+
+.p-column-filter-over{
+    z-index: 1068 !important;
 }
