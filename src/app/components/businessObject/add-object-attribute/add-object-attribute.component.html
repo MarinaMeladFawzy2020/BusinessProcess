@@ -1,0 +1,92 @@
+<button type="button" class="btn btn-success btn-sm mb-1" data-toggle="modal" data-target="#objectAttribute">
+  <i class="fa fa-plus"></i> Add Object Attribute
+</button>
+
+<div class="modal fade" id="objectAttribute" tabindex="-1" role="dialog" aria-labelledby="objectAttributeLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="objectAttributeLabel">Add Object Attribute</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+
+          <div class="form-group row">
+            <label for="Att_CODE" class="col-sm-2 col-form-label">Att Code </label>
+            <div class="col-sm-6  input-group-sm">
+              <input type="text" class="form-control" id="Att_CODE" name="Att_CODE" required />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="Att_NAME" class="col-sm-2 col-form-label">Att Name* </label>
+            <div class="col-sm-6  input-group-sm">
+              <input type="text" class="form-control" id="Att_NAME" name="Att_NAME" required />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="choiseList">
+              Choise List
+            </label>
+            <div class="col-sm-6  input-group-sm">
+              <input class="form-check-input" type="checkbox" value="" id="choiseList" name="choiseList">
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label for="att_TYPE" class="col-sm-2 col-form-label">Att Type*</label>
+            <div class="col-sm-6 input-group-sm">
+              <select class="form-control" name="att_TYPE" id="att_TYPE"></select>
+
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="dependant">
+              Dependant
+            </label>
+            <div class="col-sm-6  input-group-sm">
+              <input class="form-check-input" row="3" type="checkbox" value="" id="dependant" name="dependant">
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <label for="lookup_ID" class="col-sm-2 col-form-label">Lookup ID</label>
+            <div class="col-sm-6 input-group-sm">
+              <select id="lookup_ID" class="form-control" name="lookup_ID" id="lookup_ID"></select>
+
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="dep_ATT_ID" class="col-sm-2 col-form-label">Dept Att ID*</label>
+            <div class="col-sm-6 input-group-sm">
+              <select id="dep_ATT_ID" class="form-control" name="dep_ATT_ID"></select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="description" class="col-sm-2 col-form-label">Description </label>
+            <div class="col-sm-6  input-group-sm">
+              <textarea type="text" class="form-control" id="description" name="description"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success">Add Business Object</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+
+          </div>
+        </form>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

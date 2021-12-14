@@ -20,6 +20,14 @@ import { AddmemberComponent } from './components/processroles/addmember/addmembe
 import { TesttablegroupComponent } from './components/testtablegroup/testtablegroup.component';
 
 
+import { BusinessAttributeComponent } from './components/businessObject/business-attribute/business-attribute.component';
+import { BusinessTableComponent } from './components/businessObject/business-table/business-table.component';
+import { AddBusinessObjectComponent } from './components/businessObject/add-business-object/add-business-object.component';
+import { AddObjectAttributeComponent } from './components/businessObject/add-object-attribute/add-object-attribute.component';
+import { ProcessComponent } from './components/businessObject/process/process.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +39,14 @@ import { TesttablegroupComponent } from './components/testtablegroup/testtablegr
     ProcessroledetailsComponent,
     ProcessrolesearchComponent,
     AddprocessroleComponent,
-    AddmemberComponent
+    AddmemberComponent,
+
+
+    AddBusinessObjectComponent,
+    BusinessTableComponent,
+    BusinessAttributeComponent,
+    ProcessComponent,
+    AddObjectAttributeComponent
 
   ],
   imports: [
