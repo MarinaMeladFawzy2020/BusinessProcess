@@ -11,8 +11,9 @@ export class ProcessroleService {
   constructor(private http: HttpClient) { }
 
  
-  getAllMembers():Observable<any> {
-    return this.http.get<any>(this.URL+'PD/api/Roles/Members?RoleId=2960');  //AllMembers
+  getAllMembers(RoleId:number):Observable<any> {
+    console.log(RoleId);
+    return this.http.get<any>(this.URL+'PD/api/Roles/AllMembers?RoleId='+RoleId);
     }
 
    gettreeRoles():Observable<any> {
@@ -23,11 +24,15 @@ export class ProcessroleService {
     return this.http.post<any>(this.URL+'PD/api/Roles' , _roles);
     }
     
-   getMembers(RoleId:number):Observable<any> {
-    return this.http.get<any>(this.URL+'PD/api/Roles/Members?RoleId='+RoleId); //2960
-    }
+    UpdateRoles(_roles:any):Observable<any> {
+      return this.http.put<any>(this.URL+'PD/api/Roles' , _roles);
+      }
 
+   getMembers(RoleIds:number):Observable<any> {
+    return this.http.get<any>(this.URL+'PD/api/Roles/Members?RoleId='+RoleIds); //2960
+    }
    AddMembers(_Members:any):Observable<any> {
-    return this.http.post<any>(this.URL+'PD/api/Roles/Members' , _Members);
+     console.log(_Members);
+    return this.http.post<any>(this.URL+'PD/api/Roles/AddMembers?RoleId='+_Members.RoleId , _Members.members);
     }
 }

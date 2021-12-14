@@ -22,6 +22,7 @@ import {PanelMenuModule} from 'primeng/panelmenu';
 import {TreeModule} from 'primeng/tree';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {InputMaskModule} from 'primeng/inputmask';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 const primengModules = [
@@ -48,6 +49,7 @@ const primengModules = [
     InputTextModule,
     ProgressBarModule,
     TreeModule,
+    CheckboxModule
    
 ];
 

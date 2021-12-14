@@ -13,18 +13,23 @@ export class ProcessroletreeComponent implements OnInit {
   [x:string]:any;
   @ViewChild('myDetails') myDetails!: ProcessroledetailsComponent;
   @ViewChild('myParentID') myParentID!: AddprocessroleComponent;
-  
  //breadcrumb
   items = [
     {label: 'Process Roles' , routerLink: '/processrole'}
    ];
   home = {icon: 'pi pi-home', routerLink: '/processrole'};
 
-  
+  ROLEIDSession:boolean = false;
   constructor(private nodeService: TestService , private processRole : ProcessroleService) {}
 
   ngOnInit() {
-   
+    // this.ROLEIDSession = sessionStorage.getItem("ROLEID");
+      if(sessionStorage.getItem("ROLESE") == null){
+        this.ROLEIDSession = false;
+      }else{
+        this.ROLEIDSession = true;
+      }
+
        this.processRole.gettreeRoles().subscribe((Response: any) => {
            this.tree = Response;
           //  console.log(this.tree);
@@ -83,9 +88,15 @@ export class ProcessroletreeComponent implements OnInit {
  
  
     nodeSelect(evt: any): void {
-      console.log(evt.node);
       this.ROLEROW = evt.node
-
+      console.log(this.ROLEROW);
+      this.storageRow = {
+          "ROLE_ID": this.ROLEROW.ROLE_ID,
+          "ROLE_NAME": this.ROLEROW.ROLE_NAME,
+          "DESCRIPTION": this.ROLEROW.DESCRIPTION,
+      }
+      sessionStorage.setItem("ROLESE", JSON.stringify(this.storageRow)); //JSON.stringify()
+      this.ROLEIDSession = true;
       setTimeout(()=>{
         this.myDetails.sendRowTree(this.ROLEROW);
         this.myParentID.sendRowTree(this.ROLEROW);

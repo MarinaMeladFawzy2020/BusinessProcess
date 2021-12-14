@@ -65,7 +65,13 @@ export class AddprocessroleComponent implements OnInit {
 
   }
  
+ reset(_f:any){
+  _f.resetForm({
+    "LAST_MODIFIED_BY": sessionStorage.getItem("username") ,
+    "PARENT_ROLE_ID": this.PARENT_ROLE_ID
+  });
 
+ }
 
 }
 

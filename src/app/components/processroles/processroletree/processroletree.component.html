@@ -7,11 +7,11 @@
     </div>
 
     <div class="col-4">
-       <p-tree [value]="treeall" [filter]="true" [filterPlaceholder]="'Filter By Role Name...'"   selectionMode="single" (onNodeSelect)="nodeSelect($event)" ></p-tree> <!--[filter]="true"-->
+       <p-tree [value]="treeall" [filter]="true" [filterPlaceholder]="'Filter By Role Name...'"   selectionMode="single" (onNodeSelect)="nodeSelect($event)" ></p-tree> 
     </div>
-
-    <div class="col-8">
-        <app-processroledetails [RoleRow]="ROLEROW" #myDetails ></app-processroledetails>
+    
+    <div class="col-8" *ngIf="ROLEIDSession == true" >
+        <app-processroledetails  #myDetails ></app-processroledetails>
     </div>
 
 </div>

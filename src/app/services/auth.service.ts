@@ -32,6 +32,7 @@ logoutUser() {
     .pipe(map(response=> {
       console.log("response");
       console.log(response);
+      sessionStorage.clear();
       sessionStorage.removeItem('token');
       sessionStorage.removeItem('username');
       return response;
